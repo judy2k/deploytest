@@ -24,4 +24,4 @@ install:
   - ./scripts/install
 
 script:
-  - ./scripts/run
+  - ./scripts/run tox
