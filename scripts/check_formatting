@@ -1,6 +1,7 @@
 #!/bin/bash
-echo -n "Using "
-black --version
-black --check src/ \
-    && echo "src formatting correct" >&2 \
-    || echo 'You must run `black src/`' >&2
+echo Using $(black --version)
+black --check src/
+case $? in
+    0) echo "src formatting correct" >&2 ;;
+    1) echo 'You must run `black src/`' ; exit 1 ;;
+esac
