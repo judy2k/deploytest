@@ -23,7 +23,7 @@ script:
 
 deploy:
   provider: pypi
-  user: ...
+  user: bedmondmark
   password: ...
   on:
     branch: master
