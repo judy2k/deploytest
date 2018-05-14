@@ -16,12 +16,6 @@ pytest = "*"
 tox = "*"
 pytest-cov = "*"
 black = "*"
-# tox-pipenv = "*"
-
-
-[requires]
-
-# python_version = "3.6"
 
 
 [pipenv]
