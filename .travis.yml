@@ -20,14 +20,14 @@ install:
 script:
 - "inv test"
 
-jobs:
-  include:
-  - stage: deploy
-    python: 3.6
-    before_install:
-    - openssl aes-256-cbc -K $encrypted_2ef685e8f1b3_key -iv $encrypted_2ef685e8f1b3_iv
-      -in .pypirc.enc -out .pypirc -d
-    install: 
-    - "pip install invoke"
-    script:
-    - "inv release"
+# jobs:
+#   include:
+#   - stage: deploy
+#     python: 3.6
+#     before_install:
+#     - openssl aes-256-cbc -K $encrypted_2ef685e8f1b3_key -iv $encrypted_2ef685e8f1b3_iv
+#       -in .pypirc.enc -out .pypirc -d
+#     install: 
+#     - "pip install invoke"
+#     script:
+#     - "inv release"
