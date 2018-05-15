@@ -2,27 +2,27 @@ dist: trusty
 sudo: false
 
 language: python
-matrix:
-  include:
-  - python: 3.6
-    env: TOXENV=formatting
-  - python: 3.4
-    env: TOXENV=py34
-  - python: 3.5
-    env: TOXENV=py35
-  - python: 3.6
-    env: TOXENV=py36
-  - python: 3.7-dev
-    env: TOXENV=py37
-
-install:
-- "pip install invoke"
-- "inv install"
-script:
-- "inv test"
 
 jobs:
   include:
+    - stage: test
+      matrix:
+        include:
+        - python: 3.6
+          env: TOXENV=formatting
+        - python: 3.4
+          env: TOXENV=py34
+        - python: 3.5
+          env: TOXENV=py35
+        - python: 3.6
+          env: TOXENV=py36
+        - python: 3.7-dev
+          env: TOXENV=py37
+      install:
+      - "pip install invoke"
+      - "inv install"
+      script:
+      - "inv test"
     - stage: deploy
       python: 3.6
       before_install:
