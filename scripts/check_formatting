@@ -1,7 +1,0 @@
-#!/bin/bash
-echo Using $(black --version)
-black --check src/
-case $? in
-    0) echo "src formatting correct" >&2 ;;
-    1) echo 'You must run `black src/`' ; exit 1 ;;
-esac
