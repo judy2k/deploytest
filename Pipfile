@@ -1,23 +1,17 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [packages]
-
 "e1839a8" = {path = ".", editable = true}
-
+detox = "*"
 
 [dev-packages]
-
 pytest = "*"
 tox = "*"
 pytest-cov = "*"
 black = "*"
 
-
 [pipenv]
-
 allow_prereleases = true
